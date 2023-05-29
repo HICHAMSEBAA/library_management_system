@@ -1,16 +1,516 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="library.library.HomePageController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Borrow               ">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="550.0" layoutY="285.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #eeecd3; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="borrowTextFieldBook" prefHeight="40.0" prefWidth="300.0" promptText="ID/Title" style="-fx-background-radius: 10;">
+                                             <HBox.margin>
+                                                <Insets left="100.0" right="50.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <VBox alignment="CENTER" prefHeight="384.0" prefWidth="400.0" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="50.0" right="100.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Label fx:id="borrowBookTitle" text="Book Title">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="25.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="borrowAuthor" text="Author">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="25.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="borrowAvailability" text="Availablity">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="25.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <DropShadow height="80.3" radius="46.32" width="106.98" />
+                                       </effect>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #eeecd3; -fx-background-radius: 50;" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="borrowTextFieldStudent" prefHeight="40.0" prefWidth="300.0" promptText="ID/Name" style="-fx-background-radius: 10;">
+                                             <HBox.margin>
+                                                <Insets left="100.0" right="50.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="50.0" right="100.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Label fx:id="borrowStudentName" text="Student Name">
+                                                   <font>
+                                                      <Font name="System Bold" size="25.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="borrowDepartment" text="Department">
+                                                   <font>
+                                                      <Font name="System Bold" size="25.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="BorrowAcadimicYear" text="Academic Year">
+                                                   <font>
+                                                      <Font name="System Bold" size="25.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <DropShadow height="80.3" radius="46.32" width="106.98" />
+                                       </effect>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="borrowButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-radius: 100;" text="Borrow">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Extention/Return     ">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="550.0" layoutY="285.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField prefHeight="40.0" prefWidth="350.0" promptText="ID/Tetle" style="-fx-background-radius: 10;">
+                                             <effect>
+                                                <InnerShadow height="20.995" radius="7.77375" width="12.1">
+                                                   <color>
+                                                      <Color red="0.5526315569877625" green="0.5526315569877625" blue="0.5526315569877625" />
+                                                   </color>
+                                                </InnerShadow>
+                                             </effect>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="550.0" prefWidth="1200.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #eeecd3; -fx-background-radius: 50;" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Label text="BOOK INFO">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="100.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Book ID ">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Titel">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Author">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="100.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                             <effect>
+                                                <DropShadow height="47.69" radius="28.5325" width="68.44" />
+                                             </effect>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #eeecd3; -fx-background-radius: 50;" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Label text="STUDENT INFO">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="100.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Student ID">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Name">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Department">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="100.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                             <effect>
+                                                <DropShadow height="47.69" radius="28.5325" width="68.44" />
+                                             </effect>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #eeecd3; -fx-background-radius: 50;" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Label text="TIME INFO">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="100.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Borrowen Date">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Return Date">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Days">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="100.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                             <effect>
+                                                <DropShadow height="47.69" radius="28.5325" width="68.44" />
+                                             </effect>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="119.0" prefWidth="1200.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-radius: 100;" text="Extend">
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin>
+                                             <effect>
+                                                <DropShadow>
+                                                   <color>
+                                                      <Color red="0.5263158082962036" green="0.5263158082962036" blue="0.5263158082962036" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-radius: 100;" text="Return">
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                             <effect>
+                                                <DropShadow>
+                                                   <color>
+                                                      <Color red="0.5263158082962036" green="0.5263158082962036" blue="0.5263158082962036" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Student            ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="550.0" layoutY="285.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <TextField prefHeight="40.0" prefWidth="350.0" promptText="Search">
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="UpDate">
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Delet">
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="700.0" prefWidth="1200.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <TableView prefHeight="725.0" prefWidth="1201.0" HBox.hgrow="ALWAYS">
+                                            <columns>
+                                              <TableColumn prefWidth="201.0" text="ID" />
+                                              <TableColumn prefWidth="243.0" text="Full Name" />
+                                                <TableColumn prefWidth="355.0" text="Email" />
+                                                <TableColumn prefWidth="191.0" text="Department" />
+                                                <TableColumn prefWidth="134.0" text="Specialization" />
+                                                <TableColumn prefWidth="75.0" text="Year" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Books      ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="550.0" layoutY="285.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0">
+                                       <children>
+                                          <TextField prefHeight="40.0" prefWidth="350.0" promptText="Search">
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="UpDate">
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Delet">
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="700.0" prefWidth="1200.0">
+                                       <children>
+                                          <TableView prefHeight="743.0" prefWidth="1201.0" HBox.hgrow="ALWAYS">
+                                            <columns>
+                                              <TableColumn prefWidth="209.0" text="ID" />
+                                              <TableColumn minWidth="0.0" prefWidth="361.0" text="Title" />
+                                                <TableColumn prefWidth="305.0" text="Author" />
+                                                <TableColumn prefWidth="324.0" text="Availablity" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Statistics          ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HBox layoutX="500.0" layoutY="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox alignment="CENTER" style="-fx-background-color: #eeecd3; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                                       </HBox.margin>
+                                       <effect>
+                                          <DropShadow height="66.96" radius="30.384999999999998" width="56.58" />
+                                       </effect>
+                                       <children>
+                                          <Label text="Book Statistic">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <PieChart>
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" left="10.0" right="10.0" top="100.0" />
+                                             </VBox.margin>
+                                          </PieChart>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" style="-fx-background-color: #eeecd3; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                                       </HBox.margin>
+                                       <effect>
+                                          <DropShadow height="66.96" radius="30.384999999999998" width="56.58" />
+                                       </effect>
+                                       <children>
+                                          <Label text="Student Statistic">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <PieChart>
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" left="10.0" right="10.0" top="100.0" />
+                                             </VBox.margin>
+                                          </PieChart>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
