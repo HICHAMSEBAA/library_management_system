@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#cancel" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.updateBook.UpdateBookController">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="400.0">
+                    <children>
+                        <TextField fx:id="title" prefHeight="45.0" prefWidth="340.0" promptText="Book Title" />
+                    </children></HBox>
+                <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="400.0">
+                    <children>
+                        <TextField fx:id="bookId" prefHeight="45.0" prefWidth="340.0" promptText="Book ID" />
+                    </children></HBox>
+                <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="400.0">
+                    <children>
+                        <TextField fx:id="author" prefHeight="45.0" prefWidth="340.0" promptText="Author" />
+                    </children></HBox>
+                <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="400.0">
+                    <children>
+                        <TextField fx:id="publisher" prefHeight="45.0" prefWidth="340.0" promptText="Publisher" />
+                    </children></HBox>
+                <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="400.0">
+                    <children>
+                        <Button fx:id="updateButton" onAction="#update" prefHeight="65.0" prefWidth="200.0" text="UpDate" />
+                        <Button fx:id="cancleButton" onAction="#cancel" prefHeight="65.0" prefWidth="200.0" text="Cancle" />
+                    </children></HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
