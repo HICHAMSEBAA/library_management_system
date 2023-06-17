@@ -20,7 +20,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.library.HomePageController">
    <children>
       <BorderPane>
          <StackPane.margin>
@@ -156,7 +156,7 @@
                                  <children>
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <TextField prefHeight="40.0" prefWidth="350.0" promptText="ID/Tetle" style="-fx-background-radius: 10;">
+                                          <TextField fx:id="ERIdTitle" prefHeight="40.0" prefWidth="350.0" promptText="ID/Tetle" style="-fx-background-radius: 10;">
                                              <effect>
                                                 <InnerShadow height="20.995" radius="7.77375" width="12.1">
                                                    <color>
@@ -182,7 +182,7 @@
                                                       <Insets bottom="100.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label text="Book ID ">
+                                                <Label fx:id="ERBookId" text="Book ID ">
                                                    <font>
                                                       <Font name="System Bold Italic" size="20.0" />
                                                    </font>
@@ -190,7 +190,7 @@
                                                       <Insets top="30.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label text="Titel">
+                                                <Label fx:id="ERTitel" text="Titel">
                                                    <font>
                                                       <Font name="System Bold Italic" size="20.0" />
                                                    </font>
@@ -198,7 +198,7 @@
                                                       <Insets top="30.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label text="Author">
+                                                <Label fx:id="ERAuthor" text="Author">
                                                    <font>
                                                       <Font name="System Bold Italic" size="20.0" />
                                                    </font>
@@ -224,7 +224,7 @@
                                                       <Insets bottom="100.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label text="Student ID">
+                                                <Label fx:id="ERStudentId" text="Student ID">
                                                    <font>
                                                       <Font name="System Bold Italic" size="20.0" />
                                                    </font>
@@ -232,7 +232,7 @@
                                                       <Insets top="30.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label text="Name">
+                                                <Label fx:id="ERName" text="Name">
                                                    <font>
                                                       <Font name="System Bold Italic" size="20.0" />
                                                    </font>
@@ -240,7 +240,7 @@
                                                       <Insets top="30.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label text="Department">
+                                                <Label fx:id="ERDepartment" text="Department">
                                                    <font>
                                                       <Font name="System Bold Italic" size="20.0" />
                                                    </font>
@@ -266,7 +266,7 @@
                                                       <Insets bottom="100.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label text="Borrowen Date">
+                                                <Label fx:id="ERBorroweDate" text="Borrowen Date">
                                                    <font>
                                                       <Font name="System Bold Italic" size="20.0" />
                                                    </font>
@@ -274,7 +274,7 @@
                                                       <Insets top="30.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label text="Return Date">
+                                                <Label fx:id="ERReturnDate" text="Return Date">
                                                    <font>
                                                       <Font name="System Bold Italic" size="20.0" />
                                                    </font>
@@ -282,7 +282,7 @@
                                                       <Insets top="30.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label text="Days">
+                                                <Label fx:id="ERDays" text="Days">
                                                    <font>
                                                       <Font name="System Bold Italic" size="20.0" />
                                                    </font>
@@ -299,7 +299,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="119.0" prefWidth="1200.0">
                                        <children>
-                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-radius: 100;" text="Extend">
+                                          <Button fx:id="ERExtend" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-radius: 100;" text="Extend">
                                              <HBox.margin>
                                                 <Insets right="50.0" />
                                              </HBox.margin>
@@ -317,7 +317,7 @@
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
                                           </Button>
-                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-radius: 100;" text="Return">
+                                          <Button fx:id="ERReturn" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-radius: 100;" text="Return">
                                              <HBox.margin>
                                                 <Insets left="50.0" />
                                              </HBox.margin>
@@ -355,7 +355,7 @@
                                                 <Insets right="50.0" />
                                              </HBox.margin>
                                           </TextField>
-                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
+                                          <Button mnemonicParsing="false" onAction="#addStudent" prefHeight="40.0" prefWidth="100.0" text="Add">
                                              <HBox.margin>
                                                 <Insets left="50.0" />
                                              </HBox.margin>
@@ -363,7 +363,7 @@
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
                                           </Button>
-                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="UpDate">
+                                          <Button mnemonicParsing="false" onAction="#updateStudent" prefHeight="40.0" prefWidth="100.0" text="UpDate">
                                              <HBox.margin>
                                                 <Insets left="50.0" />
                                              </HBox.margin>
@@ -371,7 +371,7 @@
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
                                           </Button>
-                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Delet">
+                                          <Button mnemonicParsing="false" onAction="#deletStudent" prefHeight="40.0" prefWidth="100.0" text="Delet">
                                              <HBox.margin>
                                                 <Insets left="50.0" />
                                              </HBox.margin>
@@ -413,7 +413,7 @@
                                                 <Insets right="50.0" />
                                              </HBox.margin>
                                           </TextField>
-                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
+                                          <Button mnemonicParsing="false" onAction="#addBook" prefHeight="40.0" prefWidth="100.0" text="Add">
                                              <HBox.margin>
                                                 <Insets left="50.0" />
                                              </HBox.margin>
@@ -421,7 +421,7 @@
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
                                           </Button>
-                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="UpDate">
+                                          <Button mnemonicParsing="false" onAction="#updateBook" prefHeight="40.0" prefWidth="100.0" text="UpDate">
                                              <HBox.margin>
                                                 <Insets left="50.0" />
                                              </HBox.margin>
@@ -429,7 +429,7 @@
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
                                           </Button>
-                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Delet">
+                                          <Button mnemonicParsing="false" onAction="#deletBook" prefHeight="40.0" prefWidth="100.0" text="Delet">
                                              <HBox.margin>
                                                 <Insets left="50.0" />
                                              </HBox.margin>
